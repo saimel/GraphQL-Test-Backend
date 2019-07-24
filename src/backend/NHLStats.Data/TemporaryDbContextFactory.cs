@@ -6,12 +6,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace NHLStats.Data
 {
-    public class TemporaryDbContextFactory : DesignTimeDbContextFactoryBase<NHLStatsContext>
+    public class TemporaryDbContextFactory : DesignTimeDbContextFactoryBase<MLBStatsContext>
     {
-        protected override NHLStatsContext CreateNewInstance(
-            DbContextOptions<NHLStatsContext> options)
+        protected override MLBStatsContext CreateNewInstance(
+            DbContextOptions<MLBStatsContext> options)
         {
-            return new NHLStatsContext(options);
+            return new MLBStatsContext(options);
         }
     }
 }

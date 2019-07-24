@@ -1,4 +1,4 @@
-﻿ 
+﻿
 
 using GraphQL.Types;
 
@@ -14,6 +14,8 @@ namespace NHLStats.Api.Models
             Field<StringGraphType>("height");
             Field<IntGraphType>("weightLbs");
             Field<DateGraphType>("birthDate");
+
+            Field<ListGraphType<PlayerStatisticInputType>>("statistics");
         }
     }
 }

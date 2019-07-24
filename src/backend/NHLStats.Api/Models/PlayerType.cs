@@ -15,10 +15,11 @@ namespace NHLStats.Api.Models
             Field(x => x.BirthPlace);
             Field(x => x.Height);
             Field(x => x.WeightLbs);
-            Field<StringGraphType>("birthDate", resolve: context => context.Source.BirthDate.ToShortDateString());
-            Field<ListGraphType<SkaterStatisticType>>("skaterSeasonStats",
+            Field(x => x.BirthDate);
+            //Field<StringGraphType>("birthDate", resolve: context => context.Source.BirthDate.ToShortDateString());
+            Field<ListGraphType<PlayerStatisticType>>("playerStats",
                 arguments: new QueryArguments(new QueryArgument<IntGraphType> { Name = "id" }),
-                resolve: context => contextServiceLocator.SkaterStatisticRepository.Get(context.Source.Id), description: "Player's skater stats");
+                resolve: context => contextServiceLocator.PlayerStatisticRepository.Get(context.Source.Id), description: "Player's stats");
         }
     }
 }

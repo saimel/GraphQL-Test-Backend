@@ -1,14 +1,12 @@
 ﻿
 using GraphQL.Types;
 using NHLStats.Api.Helpers;
-using NHLStats.Core.Data;
-
 
 namespace NHLStats.Api.Models
 {
-    public class NHLStatsQuery : ObjectGraphType
+    public class MLBStatsQuery : ObjectGraphType
     {
-        public NHLStatsQuery(ContextServiceLocator contextServiceLocator)
+        public MLBStatsQuery(ContextServiceLocator contextServiceLocator)
         {
             Field<PlayerType>(
                 "player",
@@ -20,11 +18,8 @@ namespace NHLStats.Api.Models
                 resolve: context => contextServiceLocator.PlayerRepository.GetRandom());
 
             Field<ListGraphType<PlayerType>>(
-                "players",
+                "allPlayers",
                 resolve: context => contextServiceLocator.PlayerRepository.All());
         }
     }
 }
-
-
- 

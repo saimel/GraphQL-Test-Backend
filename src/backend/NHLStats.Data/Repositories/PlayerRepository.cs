@@ -12,9 +12,9 @@ namespace NHLStats.Data.Repositories
 {
     public class PlayerRepository : IPlayerRepository
     {
-        private readonly NHLStatsContext _db;
+        private readonly MLBStatsContext _db;
 
-        public PlayerRepository(NHLStatsContext db)
+        public PlayerRepository(MLBStatsContext db)
         {
             _db = db;
         }
@@ -31,12 +31,21 @@ namespace NHLStats.Data.Repositories
 
         public async Task<List<Player>> All()
         {
-            return await _db.Players.ToListAsync();
+            return await _db.Players
+                .Include(p => p.PlayerStatistics)
+                .ToListAsync();
         }
 
         public async Task<Player> Add(Player player)
         {
             await _db.Players.AddAsync(player);
+
+            foreach (var stats in player.PlayerStatistics)
+            {
+                stats.PlayerId = player.Id;
+                await _db.PlayerStatistics.AddAsync(stats);
+            }
+
             await _db.SaveChangesAsync();
             return player;
         }

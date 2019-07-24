@@ -4,9 +4,9 @@ using NHLStats.Core.Models;
 
 namespace NHLStats.Data
 {
-    public sealed class NHLStatsContext : DbContext
+    public sealed class MLBStatsContext : DbContext
     {
-        public NHLStatsContext(DbContextOptions options)
+        public MLBStatsContext(DbContextOptions options)
             : base(options)
         {
            // these are mutually exclusive, migrations cannot be used with EnsureCreated()
@@ -15,10 +15,13 @@ namespace NHLStats.Data
         }
 
         public DbSet<Player> Players { get; set; }
+
         public DbSet<Season> Seasons { get; set; }
-        public DbSet<Team> Teams { get; set; }
+
         public DbSet<League> Leagues { get; set; }
-        public DbSet<SkaterStatistic> SkaterStatistics { get; set; }
-        
+
+        public DbSet<Team> Teams { get; set; }
+
+        public DbSet<PlayerStatistic> PlayerStatistics { get; set; }
     }
 }

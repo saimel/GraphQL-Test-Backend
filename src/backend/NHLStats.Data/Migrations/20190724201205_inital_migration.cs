@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace NHLStats.Data.Migrations
 {
-    public partial class initial : Migration
+    public partial class inital_migration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -60,53 +59,52 @@ namespace NHLStats.Data.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
-                    Abbreviation = table.Column<string>(nullable: true)
+                    Abbreviation = table.Column<string>(nullable: true),
+                    LeagueId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Teams", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Teams_Leagues_LeagueId",
+                        column: x => x.LeagueId,
+                        principalTable: "Leagues",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "SkaterStatistics",
+                name: "PlayerStatistics",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     SeasonId = table.Column<int>(nullable: false),
-                    LeagueId = table.Column<int>(nullable: false),
                     TeamId = table.Column<int>(nullable: false),
                     PlayerId = table.Column<int>(nullable: false),
                     GamesPlayed = table.Column<int>(nullable: false),
-                    Goals = table.Column<int>(nullable: false),
-                    Assists = table.Column<int>(nullable: false),
-                    Points = table.Column<int>(nullable: false),
-                    PenaltyMinutes = table.Column<int>(nullable: false),
-                    PlusMinus = table.Column<short>(nullable: true)
+                    AtBat = table.Column<int>(nullable: false),
+                    Hits = table.Column<int>(nullable: false),
+                    RBIs = table.Column<int>(nullable: false),
+                    HomeRuns = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SkaterStatistics", x => x.Id);
+                    table.PrimaryKey("PK_PlayerStatistics", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_SkaterStatistics_Leagues_LeagueId",
-                        column: x => x.LeagueId,
-                        principalTable: "Leagues",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_SkaterStatistics_Players_PlayerId",
+                        name: "FK_PlayerStatistics_Players_PlayerId",
                         column: x => x.PlayerId,
                         principalTable: "Players",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_SkaterStatistics_Seasons_SeasonId",
+                        name: "FK_PlayerStatistics_Seasons_SeasonId",
                         column: x => x.SeasonId,
                         principalTable: "Seasons",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_SkaterStatistics_Teams_TeamId",
+                        name: "FK_PlayerStatistics_Teams_TeamId",
                         column: x => x.TeamId,
                         principalTable: "Teams",
                         principalColumn: "Id",
@@ -114,33 +112,30 @@ namespace NHLStats.Data.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_SkaterStatistics_LeagueId",
-                table: "SkaterStatistics",
-                column: "LeagueId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_SkaterStatistics_PlayerId",
-                table: "SkaterStatistics",
+                name: "IX_PlayerStatistics_PlayerId",
+                table: "PlayerStatistics",
                 column: "PlayerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SkaterStatistics_SeasonId",
-                table: "SkaterStatistics",
+                name: "IX_PlayerStatistics_SeasonId",
+                table: "PlayerStatistics",
                 column: "SeasonId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SkaterStatistics_TeamId",
-                table: "SkaterStatistics",
+                name: "IX_PlayerStatistics_TeamId",
+                table: "PlayerStatistics",
                 column: "TeamId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Teams_LeagueId",
+                table: "Teams",
+                column: "LeagueId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "SkaterStatistics");
-
-            migrationBuilder.DropTable(
-                name: "Leagues");
+                name: "PlayerStatistics");
 
             migrationBuilder.DropTable(
                 name: "Players");
@@ -150,6 +145,9 @@ namespace NHLStats.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Teams");
+
+            migrationBuilder.DropTable(
+                name: "Leagues");
         }
     }
 }

@@ -10,7 +10,7 @@ namespace NHLStats.Data.InMemory
     public class PlayerRepository : IPlayerRepository
     {
         private readonly List<Player> _players = new List<Player> {
-            new Player() { Id = 1, Name = "Connor McDavid" }
+            new Player() { Id = 1, Name = "Babe Ruth" }
         };
 
         public Task<Player> Get(int id)

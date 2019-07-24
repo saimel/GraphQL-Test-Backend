@@ -31,21 +31,28 @@ namespace NHLStats.Api
            
             services.AddHttpContextAccessor();
             services.AddSingleton<ContextServiceLocator>();
-            services.AddDbContext<NHLStatsContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:NHLStatsDb"]));
+            services.AddDbContext<MLBStatsContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:Default"]));
             services.AddTransient<IPlayerRepository, PlayerRepository>();
-            services.AddTransient<ISkaterStatisticRepository, SkaterStatisticRepository>();
+            services.AddTransient<IPlayerStatisticRepository, PlayerStatisticRepository>();
             services.AddSingleton<IDocumentExecuter, DocumentExecuter>();
-            services.AddSingleton<NHLStatsQuery>();
-            services.AddSingleton<NHLStatsMutation>();
+            services.AddSingleton<MLBStatsQuery>();
+            services.AddSingleton<MLBPlayerMutation>();
             services.AddSingleton<PlayerType>();
             services.AddSingleton<PlayerInputType>();
-            services.AddSingleton<SkaterStatisticType>();
+            services.AddSingleton<PlayerStatisticType>();
+
+            #region saimel
+
+            services.AddSingleton<PlayerStatisticInputType>();
+
+            #endregion
+
             var sp = services.BuildServiceProvider();
-            services.AddSingleton<ISchema>(new NHLStatsSchema(new FuncDependencyResolver(type => sp.GetService(type))));
+            services.AddSingleton<ISchema>(new MLBStatsSchema(new FuncDependencyResolver(type => sp.GetService(type))));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, NHLStatsContext db)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, MLBStatsContext db)
         {
             if (env.IsDevelopment())
             {

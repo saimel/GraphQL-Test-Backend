@@ -5,8 +5,10 @@ using NHLStats.Core.Models;
 
 namespace NHLStats.Core.Data
 {
-    public interface ISkaterStatisticRepository
+    public interface IPlayerStatisticRepository
     {
-        Task<List<SkaterStatistic>> Get(int playerId);
+        Task<IList<PlayerStatistic>> Get(int playerId);
+
+        Task<PlayerStatistic> Add(PlayerStatistic playerStats);
     }
 }
