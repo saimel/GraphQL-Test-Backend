@@ -23,8 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NHLStats.Core\MLBStats.Core.csproj" />
-    <ProjectReference Include="..\NHLStats.Data\MLBStats.Data.csproj" />
+    <ProjectReference Include="..\MLBStats.Core\MLBStats.Core.csproj" />
+    <ProjectReference Include="..\MLBStats.Data\MLBStats.Data.csproj" />
   </ItemGroup>
 
 </Project>

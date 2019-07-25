@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29006.145
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLBStats.Api", "NHLStats.Api\MLBStats.Api.csproj", "{2988F8C6-0F4F-419B-911B-B69515A7800D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLBStats.Api", "MLBStats.Api\MLBStats.Api.csproj", "{2988F8C6-0F4F-419B-911B-B69515A7800D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLBStats.Core", "NHLStats.Core\MLBStats.Core.csproj", "{E66B37D4-082D-42FC-A049-A1B183E18A2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLBStats.Core", "MLBStats.Core\MLBStats.Core.csproj", "{E66B37D4-082D-42FC-A049-A1B183E18A2D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLBStats.Data", "NHLStats.Data\MLBStats.Data.csproj", "{BFC5C5AF-26AA-4E41-85D5-37F23AE713A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLBStats.Data", "MLBStats.Data\MLBStats.Data.csproj", "{BFC5C5AF-26AA-4E41-85D5-37F23AE713A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
