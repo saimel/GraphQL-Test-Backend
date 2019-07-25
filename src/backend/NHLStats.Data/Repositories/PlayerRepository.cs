@@ -32,7 +32,7 @@ namespace NHLStats.Data.Repositories
         public async Task<List<Player>> All()
         {
             return await _db.Players
-                .Include(p => p.PlayerStatistics)
+                .Include(p => p.Statistics)
                 .ToListAsync();
         }
 
@@ -40,7 +40,7 @@ namespace NHLStats.Data.Repositories
         {
             await _db.Players.AddAsync(player);
 
-            foreach (var stats in player.PlayerStatistics)
+            foreach (var stats in player.Statistics)
             {
                 stats.PlayerId = player.Id;
                 await _db.PlayerStatistics.AddAsync(stats);

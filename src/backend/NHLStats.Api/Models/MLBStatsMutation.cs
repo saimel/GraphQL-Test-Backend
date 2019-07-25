@@ -11,7 +11,7 @@ namespace NHLStats.Api.Models
     {
         public MLBPlayerMutation(ContextServiceLocator contextServiceLocator)
         {
-            //Name = "CreatePlayerMutation";
+            Name = "CreatePlayerMutation";
 
             Field<PlayerType>(
                 "createPlayer",
@@ -24,16 +24,27 @@ namespace NHLStats.Api.Models
                     return contextServiceLocator.PlayerRepository.Add(player);
                 });
 
-            //Field<PlayerStatisticType>(
-            //    "createPlayerStats",
-            //    arguments: new QueryArguments(
-            //        new QueryArgument<NonNullGraphType<PlayerStatisticInputType>> { Name = "playerStats" }
-            //    ),
-            //    resolve: context =>
-            //    {
-            //        var playerStats = context.GetArgument<PlayerStatistic>("playerStats");
-            //        return contextServiceLocator.PlayerStatisticRepository.Add(playerStats);
-            //    });
+            Field<PlayerStatisticType>(
+                "createPlayerStats",
+                arguments: new QueryArguments(
+                    new QueryArgument<NonNullGraphType<PlayerStatisticInputType>> { Name = "playerStats" }
+                ),
+                resolve: context =>
+                {
+                    var playerStats = context.GetArgument<PlayerStatistic>("playerStats");
+                    return contextServiceLocator.PlayerStatisticRepository.Add(playerStats);
+                });
+
+            Field<PlayerStatisticType>(
+                "createStats",
+                arguments: new QueryArguments(
+                    new QueryArgument<NonNullGraphType<StatisticInputType>> { Name = "stats" }
+                ),
+                resolve: context =>
+                {
+                    var stats = context.GetArgument<PlayerStatistic>("stats");
+                    return contextServiceLocator.PlayerStatisticRepository.Add(stats);
+                });
         }
     }
 }

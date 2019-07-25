@@ -19,7 +19,7 @@ namespace NHLStats.Core.Models
 
         public int WeightLbs { get; set; }
 
-        public IList<PlayerStatistic> PlayerStatistics { get; set; }
+        public IList<PlayerStatistic> Statistics { get; set; }
     }
 }
 

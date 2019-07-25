@@ -44,6 +44,7 @@ namespace NHLStats.Api
             #region saimel
 
             services.AddSingleton<PlayerStatisticInputType>();
+            services.AddSingleton<StatisticInputType>();
 
             #endregion
 

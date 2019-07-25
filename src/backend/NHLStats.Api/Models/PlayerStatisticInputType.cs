@@ -18,4 +18,13 @@ namespace NHLStats.Api.Models
             Field<IntGraphType>("homeRuns");
         }
     }
+
+    public class StatisticInputType : PlayerStatisticInputType
+    {
+        public StatisticInputType() : base()
+        {
+            Name = "StatisticInput";
+            Field<NonNullGraphType<IntGraphType>>("playerId");
+        }
+    }
 }
