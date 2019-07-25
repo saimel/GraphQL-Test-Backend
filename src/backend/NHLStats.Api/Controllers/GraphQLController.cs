@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using GraphQL;
 using GraphQL.Types;
 using Microsoft.AspNetCore.Mvc;
-using NHLStats.Api.Models;
+using MLBStats.Api.Models;
 
-namespace NHLStats.Api.Controllers
+namespace MLBStats.Api.Controllers
 {
     [Route("[controller]")] 
     public class GraphQLController : Controller

@@ -1,9 +1,9 @@
 ﻿
 using System.Threading.Tasks;
 using System.Collections.Generic;
-using NHLStats.Core.Models;
+using MLBStats.Core.Models;
 
-namespace NHLStats.Core.Data
+namespace MLBStats.Core.Data
 {
     public interface IPlayerStatisticRepository
     {

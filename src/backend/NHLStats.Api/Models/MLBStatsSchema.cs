@@ -2,7 +2,7 @@
 using GraphQL;
 using GraphQL.Types;
 
-namespace NHLStats.Api.Models
+namespace MLBStats.Api.Models
 {
     public class MLBStatsSchema : Schema
     {

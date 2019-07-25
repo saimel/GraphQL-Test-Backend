@@ -6,14 +6,14 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using NHLStats.Api.Helpers;
-using NHLStats.Api.Models;
-using NHLStats.Core.Data;
-using NHLStats.Data;
-using NHLStats.Data.Repositories;
+using MLBStats.Api.Helpers;
+using MLBStats.Api.Models;
+using MLBStats.Core.Data;
+using MLBStats.Data;
+using MLBStats.Data.Repositories;
 
 
-namespace NHLStats.Api
+namespace MLBStats.Api
 {
     public class Startup
     {

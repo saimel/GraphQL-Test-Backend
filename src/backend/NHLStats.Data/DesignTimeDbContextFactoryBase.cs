@@ -7,7 +7,7 @@ using System;
 using System.IO;
  
 
-namespace NHLStats.Data
+namespace MLBStats.Data
 {
     public abstract class DesignTimeDbContextFactoryBase<TContext> :
         IDesignTimeDbContextFactory<TContext> where TContext : DbContext

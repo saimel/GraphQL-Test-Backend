@@ -5,10 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using NHLStats.Core.Data;
-using NHLStats.Core.Models;
+using MLBStats.Core.Data;
+using MLBStats.Core.Models;
 
-namespace NHLStats.Data.Repositories
+namespace MLBStats.Data.Repositories
 {
     public class PlayerRepository : IPlayerRepository
     {

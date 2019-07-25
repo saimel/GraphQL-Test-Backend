@@ -4,7 +4,7 @@
 using Microsoft.EntityFrameworkCore;
  
 
-namespace NHLStats.Data
+namespace MLBStats.Data
 {
     public class TemporaryDbContextFactory : DesignTimeDbContextFactoryBase<MLBStatsContext>
     {

@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using NHLStats.Data;
+using MLBStats.Data;
 
-namespace NHLStats.Data.Migrations
+namespace MLBStats.Data.Migrations
 {
     [DbContext(typeof(MLBStatsContext))]
     partial class MLBStatsContextModelSnapshot : ModelSnapshot

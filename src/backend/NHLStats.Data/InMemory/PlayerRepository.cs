@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using NHLStats.Core.Data;
-using NHLStats.Core.Models;
+using MLBStats.Core.Data;
+using MLBStats.Core.Models;
 
-namespace NHLStats.Data.InMemory
+namespace MLBStats.Data.InMemory
 {
     public class PlayerRepository : IPlayerRepository
     {

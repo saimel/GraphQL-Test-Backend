@@ -1,7 +1,7 @@
 ﻿using GraphQL.Types;
-using NHLStats.Core.Models;
+using MLBStats.Core.Models;
 
-namespace NHLStats.Api.Models
+namespace MLBStats.Api.Models
 {
     public class PlayerStatisticType : ObjectGraphType<PlayerStatistic>
     {

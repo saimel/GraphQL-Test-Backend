@@ -1,5 +1,5 @@
 ﻿
-namespace NHLStats.Core.Models
+namespace MLBStats.Core.Models
 {
     public class Season
     {

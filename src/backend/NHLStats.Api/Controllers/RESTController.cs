@@ -2,10 +2,10 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using NHLStats.Core.Data;
-using NHLStats.Core.Models;
+using MLBStats.Core.Data;
+using MLBStats.Core.Models;
 
-namespace NHLStats.Api.Controllers
+namespace MLBStats.Api.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]

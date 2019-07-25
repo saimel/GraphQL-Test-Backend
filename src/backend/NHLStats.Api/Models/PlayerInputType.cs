@@ -2,7 +2,7 @@
 
 using GraphQL.Types;
 
-namespace NHLStats.Api.Models
+namespace MLBStats.Api.Models
 {
     public class PlayerInputType : InputObjectGraphType
     {

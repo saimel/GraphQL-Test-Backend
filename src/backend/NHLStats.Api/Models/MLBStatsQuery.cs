@@ -1,8 +1,8 @@
 ﻿
 using GraphQL.Types;
-using NHLStats.Api.Helpers;
+using MLBStats.Api.Helpers;
 
-namespace NHLStats.Api.Models
+namespace MLBStats.Api.Models
 {
     public class MLBStatsQuery : ObjectGraphType
     {

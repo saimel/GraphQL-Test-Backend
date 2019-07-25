@@ -1,11 +1,10 @@
 ﻿
 
 using GraphQL.Types;
-using NHLStats.Api.Helpers;
-using NHLStats.Core.Data;
-using NHLStats.Core.Models;
+using MLBStats.Api.Helpers;
+using MLBStats.Core.Models;
 
-namespace NHLStats.Api.Models
+namespace MLBStats.Api.Models
 {
     public class MLBPlayerMutation : ObjectGraphType
     {

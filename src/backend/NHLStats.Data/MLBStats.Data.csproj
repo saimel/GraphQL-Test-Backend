@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NHLStats.Core\NHLStats.Core.csproj" />
+    <ProjectReference Include="..\NHLStats.Core\MLBStats.Core.csproj" />
   </ItemGroup>
   
   <ItemGroup>

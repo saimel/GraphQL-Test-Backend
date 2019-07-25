@@ -1,8 +1,8 @@
 ﻿ 
 using Microsoft.EntityFrameworkCore;
-using NHLStats.Core.Models;
+using MLBStats.Core.Models;
 
-namespace NHLStats.Data
+namespace MLBStats.Data
 {
     public sealed class MLBStatsContext : DbContext
     {

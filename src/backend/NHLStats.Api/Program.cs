@@ -3,7 +3,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
  
 
-namespace NHLStats.Api
+namespace MLBStats.Api
 {
     public class Program
     {

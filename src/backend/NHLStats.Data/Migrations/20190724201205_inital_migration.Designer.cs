@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using NHLStats.Data;
+using MLBStats.Data;
 
-namespace NHLStats.Data.Migrations
+namespace MLBStats.Data.Migrations
 {
     [DbContext(typeof(MLBStatsContext))]
     [Migration("20190724201205_inital_migration")]

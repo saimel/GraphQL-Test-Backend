@@ -2,9 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using NHLStats.Core.Models;
+using MLBStats.Core.Models;
 
-namespace NHLStats.Data
+namespace MLBStats.Data
 {
     public static class NHLStatsSeedData
     {

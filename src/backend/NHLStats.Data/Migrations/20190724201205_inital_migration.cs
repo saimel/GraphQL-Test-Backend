@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace NHLStats.Data.Migrations
+namespace MLBStats.Data.Migrations
 {
     public partial class inital_migration : Migration
     {

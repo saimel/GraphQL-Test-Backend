@@ -2,7 +2,7 @@
 
 using Newtonsoft.Json.Linq;
 
-namespace NHLStats.Api.Models
+namespace MLBStats.Api.Models
 {
     public class GraphQLQuery
     {

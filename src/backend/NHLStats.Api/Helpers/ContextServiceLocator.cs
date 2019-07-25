@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using NHLStats.Core.Data;
+using MLBStats.Core.Data;
 
 
-namespace NHLStats.Api.Helpers
+namespace MLBStats.Api.Helpers
 {
     // https://github.com/graphql-dotnet/graphql-dotnet/issues/648#issuecomment-431489339
     public class ContextServiceLocator

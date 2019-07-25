@@ -3,7 +3,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace NHLStats.Core.Models
+namespace MLBStats.Core.Models
 {
     public class Player
     {
