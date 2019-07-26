@@ -22,7 +22,7 @@ namespace MLBStats.Data.Repositories
             return await _db.PlayerStatistics
                 .Include(ps => ps.Season)
                 .Include(ps => ps.Team)
-                .Include(ps => ps.Team.League)
+                    .ThenInclude(t => t.League)
                 .Where(ps => ps.PlayerId == playerId)
                 .ToListAsync();
         }

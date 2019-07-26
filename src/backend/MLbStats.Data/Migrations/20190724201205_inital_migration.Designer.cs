@@ -21,7 +21,7 @@ namespace MLBStats.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("NHLStats.Core.Models.League", b =>
+            modelBuilder.Entity("MLBStats.Core.Models.League", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -36,7 +36,7 @@ namespace MLBStats.Data.Migrations
                     b.ToTable("Leagues");
                 });
 
-            modelBuilder.Entity("NHLStats.Core.Models.Player", b =>
+            modelBuilder.Entity("MLBStats.Core.Models.Player", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -57,7 +57,7 @@ namespace MLBStats.Data.Migrations
                     b.ToTable("Players");
                 });
 
-            modelBuilder.Entity("NHLStats.Core.Models.PlayerStatistic", b =>
+            modelBuilder.Entity("MLBStats.Core.Models.PlayerStatistic", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -90,7 +90,7 @@ namespace MLBStats.Data.Migrations
                     b.ToTable("PlayerStatistics");
                 });
 
-            modelBuilder.Entity("NHLStats.Core.Models.Season", b =>
+            modelBuilder.Entity("MLBStats.Core.Models.Season", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -103,7 +103,7 @@ namespace MLBStats.Data.Migrations
                     b.ToTable("Seasons");
                 });
 
-            modelBuilder.Entity("NHLStats.Core.Models.Team", b =>
+            modelBuilder.Entity("MLBStats.Core.Models.Team", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -122,27 +122,27 @@ namespace MLBStats.Data.Migrations
                     b.ToTable("Teams");
                 });
 
-            modelBuilder.Entity("NHLStats.Core.Models.PlayerStatistic", b =>
+            modelBuilder.Entity("MLBStats.Core.Models.PlayerStatistic", b =>
                 {
-                    b.HasOne("NHLStats.Core.Models.Player")
+                    b.HasOne("MLBStats.Core.Models.Player")
                         .WithMany("PlayerStatistics")
                         .HasForeignKey("PlayerId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("NHLStats.Core.Models.Season", "Season")
+                    b.HasOne("MLBStats.Core.Models.Season", "Season")
                         .WithMany()
                         .HasForeignKey("SeasonId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("NHLStats.Core.Models.Team", "Team")
+                    b.HasOne("MLBStats.Core.Models.Team", "Team")
                         .WithMany()
                         .HasForeignKey("TeamId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("NHLStats.Core.Models.Team", b =>
+            modelBuilder.Entity("MLBStats.Core.Models.Team", b =>
                 {
-                    b.HasOne("NHLStats.Core.Models.League", "League")
+                    b.HasOne("MLBStats.Core.Models.League", "League")
                         .WithMany("Teams")
                         .HasForeignKey("LeagueId")
                         .OnDelete(DeleteBehavior.Cascade);

@@ -32,7 +32,7 @@ namespace MLBStats.Data.Repositories
         public async Task<List<Player>> All()
         {
             return await _db.Players
-                .Include(p => p.Statistics)
+                //.Include(p => p.Statistics)
                 .ToListAsync();
         }
 

@@ -6,7 +6,7 @@ using MLBStats.Core.Models;
 
 namespace MLBStats.Data
 {
-    public static class NHLStatsSeedData
+    public static class MLBStatsSeedData
     {
         private const string RegularSeason2016 = "2016 Regular Season";
         private const string RegularSeason2017 = "2017 Regular Season";
