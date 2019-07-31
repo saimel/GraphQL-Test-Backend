@@ -33,7 +33,9 @@ namespace MLBStats.Data.Repositories
 
             await _db.SaveChangesAsync();
 
-            return playerStats;
+            var result = await this.Get(playerStats.PlayerId);
+
+            return result.FirstOrDefault(s => s.SeasonId == playerStats.SeasonId && s.TeamId == playerStats.TeamId);
         }
     }
 }
